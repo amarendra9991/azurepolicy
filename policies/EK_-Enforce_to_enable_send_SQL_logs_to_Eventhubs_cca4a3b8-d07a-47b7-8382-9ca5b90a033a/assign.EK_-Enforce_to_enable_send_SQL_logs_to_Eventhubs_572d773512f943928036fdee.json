@@ -1,0 +1,40 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "identity": {
+  "principalId": "f440de75-beb3-45a0-a120-af06dacb4571",
+  "tenantId": "e0b26355-1889-40d8-8ef1-e559616befda",
+  "type": "SystemAssigned"
+ },
+ "properties": {
+  "displayName": "EK -Enforce to enable send SQL logs to Eventhubs",
+  "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/mg-Dev-EBA-EK/providers/Microsoft.Authorization/policyDefinitions/cca4a3b8-d07a-47b7-8382-9ca5b90a033a",
+  "scope": "/providers/Microsoft.Management/managementGroups/mg-Dev-EBA-EK",
+  "notScopes": [],
+  "parameters": {
+   "eventHubRuleId": {
+    "value": "/subscriptions/d0cb2c7a-54b0-4d05-9d3a-3ddca8aa7ba7/resourcegroups/mneu-rg-css-esm/providers/microsoft.eventhub/namespaces/mneu-hubs-d-esm-001/authorizationrules/rootmanagesharedaccesskey"
+   },
+   "metricsEnabled": {
+    "value": "True"
+   }
+  },
+  "metadata": {
+   "assignedBy": "Amarendra Kumar",
+   "parameterScopes": {
+    "eventHubRuleId": "/subscriptions/d0cb2c7a-54b0-4d05-9d3a-3ddca8aa7ba7/resourcegroups/mneu-rg-css-esm/providers/microsoft.eventhub/namespaces/mneu-hubs-d-esm-001"
+   },
+   "createdBy": "3d7e701a-112c-4ebb-b4e9-bc529e860516",
+   "createdOn": "2021-05-02T08:09:36.1904695Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "enforcementMode": "Default"
+ },
+ "id": "/providers/Microsoft.Management/managementGroups/mg-Dev-EBA-EK/providers/Microsoft.Authorization/policyAssignments/572d773512f943928036fdee",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "572d773512f943928036fdee",
+ "location": "eastus"
+}

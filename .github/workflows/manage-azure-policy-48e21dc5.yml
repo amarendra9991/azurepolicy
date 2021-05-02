@@ -1,0 +1,32 @@
+name: manage-azure-policy-48e21dc5
+on:
+  workflow_dispatch:
+    inputs:
+      remarks:
+        description: 'Reason for triggering the workflow run'
+        required: false
+        default: 'Updating Azure Policies'
+
+
+## Uncomment the following if you wish to automatically trigger workflow run with every commit
+#
+#  push:
+#    paths:
+#      - 'policies/EK_-Enforce_to_enable_send_SQL_logs_to_Eventhubs_cca4a3b8-d07a-47b7-8382-9ca5b90a033a/**'
+#      - .github/workflows/manage-azure-policy-48e21dc5.yml
+jobs:
+  apply-azure-policy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS_48e21dc5}}
+        allow-no-subscriptions: true
+    - name: Create or Update Azure Policies
+      uses: azure/manage-azure-policy@v0
+      with:
+        paths: |
+          policies/EK_-Enforce_to_enable_send_SQL_logs_to_Eventhubs_cca4a3b8-d07a-47b7-8382-9ca5b90a033a/**

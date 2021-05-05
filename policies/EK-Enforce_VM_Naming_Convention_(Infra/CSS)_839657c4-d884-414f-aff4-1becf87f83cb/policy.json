@@ -1,0 +1,164 @@
+{
+ "properties": {
+  "displayName": "EK-Enforce VM Naming Convention (Infra/CSS)",
+  "policyType": "Custom",
+  "mode": "All",
+  "description": "Virtual Machine (Infra & Management)\n\n1-15 (Win)\n\n1-64 (Linux) Limited to 34 by this policy\n\nCase insensitive\n\nAlphanumeric, underscore, and hyphen\n\n<site>-c-i-<role/svc><seq> note: c is hard coded for CSS\n\nmneu-c-i-edc01\n\n",
+  "metadata": {
+   "category": "CGF",
+   "createdBy": "69bbd01f-3958-482e-85ec-43bea9761715",
+   "createdOn": "2019-09-10T11:08:48.919831Z",
+   "updatedBy": "06e20bf9-ac25-414c-bb9b-957eeeb08f56",
+   "updatedOn": "2019-09-15T12:51:42.9639934Z"
+  },
+  "parameters": {},
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "type",
+      "equals": "Microsoft.Compute/virtualMachines"
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci???##"
+      }
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci????##"
+      }
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci?????##"
+      }
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci??????##"
+      }
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci???????##"
+      }
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci????????##"
+      }
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci?????????##"
+      }
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci??????????##"
+      }
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci???????????##"
+      }
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci????????????##"
+      }
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci?????????????##"
+      }
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci??????????????##"
+      }
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci???????????????##"
+      }
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci????????????????##"
+      }
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci?????????????????##"
+      }
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci??????????????????##"
+      }
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci???????????????????##"
+      }
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci????????????????????##"
+      }
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci?????????????????????##"
+      }
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci??????????????????????##"
+      }
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci???????????????????????##"
+      }
+     },
+     {
+      "not": {
+       "field": "name",
+       "match": "mneuci????????????????????????##"
+      }
+     }
+    ]
+   },
+   "then": {
+    "effect": "deny"
+   }
+  }
+ },
+ "id": "/providers/Microsoft.Management/managementGroups/mg-Governed-EK/providers/Microsoft.Authorization/policyDefinitions/839657c4-d884-414f-aff4-1becf87f83cb",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "839657c4-d884-414f-aff4-1becf87f83cb"
+}
